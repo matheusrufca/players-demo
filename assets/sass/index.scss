@@ -1,0 +1,63 @@
+@import 'palette';
+@import 'global';
+aside.sidebar {
+	display: inline-block;
+	width: 25%;
+	height: 100%;
+	background-color: $primary-color-dark;
+	nav.sidebar-menu ul {
+		padding: 10px 0;
+		border-right: 1px solid $divider-color;
+		li {
+			padding: 10px;
+			border-bottom: 1px solid $divider-color;
+			cursor: pointer;
+			a {
+				color: $primary-text-color;
+				&:hover {
+					color: $primary-color-text
+				}
+			}
+			&:hover {
+				background-color: $primary-color;
+				a {
+					color: $primary-color-text
+				}
+			}
+		}
+	}
+}
+
+main.content {
+	display: inline-block;
+	float: right;
+	width: 75%;
+	height: 100%; // background-color: $primary-color;
+	padding: 30px;
+	overflow: auto;
+	h1 {
+		margin-bottom: 20px;
+	}
+	.content-header {
+		h2,
+		div.url,
+		div.description {
+			margin-bottom: 10px;
+		}
+	}
+	.error-wrapper p.alert {
+		min-height: 200px;
+	}
+}
+
+video {
+	width: 100%;
+	max-width: 100%;
+}
+
+#av-player {
+	display: block;
+	width: 100%;
+	background: $primary-color;
+	margin: 10px 0;
+}

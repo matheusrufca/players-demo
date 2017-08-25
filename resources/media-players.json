@@ -1,0 +1,22 @@
+[{
+	"title": "clappr",
+	"url": "https://github.com/clappr/clappr",
+	"description": "An extensible media player for the web. http://clappr.io"
+},{
+	"title": "shaka-player",
+	"url": "https://shaka-player-demo.appspot.com/demo/",
+	"description": "JavaScript player library / DASH client / MSE-EME player",
+	"docs": "https://shaka-player-demo.appspot.com/docs/api/index.html"
+}, {
+	"title": "dash.js",
+	"url": "https://github.com/Dash-Industry-Forum/dash.js/wiki",
+	"description": "dash.js is an initiative of the DASH Industry Forum to establish a production quality framework for building video and audio players that play back MPEG-DASH content using client-side JavaScript libraries leveraging the Media Source Extensions API set as defined by the W3C."
+},   {
+	"title": "dash-shaka-playback",
+	"url": "https://github.com/clappr/dash-shaka-playback",
+	"description": "A dash playback (based on shaka-player) for 🎬 Clappr"
+},{
+	"title": "videojs-contrib-hls",
+	"url": "https://github.com/videojs/videojs-contrib-hls",
+	"description": "HLS library for video.js http://videojs.github.io/videojs-contrib-hls/"
+}]

@@ -1,0 +1,94 @@
+﻿<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Demos</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />
+	<link rel="stylesheet" href="bower_components/select2/select2.css" />
+	<link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.min.css" />
+	<link rel="stylesheet" href="bower_components/angular-ui-notification/dist/angular-ui-notification.min.css" />
+
+	<link rel="stylesheet" href="assets/css/index.css" />
+	<link rel="stylesheet" href="assets/css/demo-framework.css" />
+	<link rel="stylesheet" href="assets/css/demo1.css" />
+</head>
+
+<body ng-app="app">
+	<a href="http://towerz.me/clappr-youtube-playback/">http://towerz.me/clappr-youtube-playback/</a>
+	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="javascript:location.reload(true)">Clappr</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav" navigation></ul>
+			</div>
+		</div>
+	</div>
+
+	<div ng-controller="MainController" class="container-fluid">
+		<div class="row">
+			<div id="content-header" class="content-header col-xs-8">
+				<h2>{{title}}-demo</h2>
+				<div class="url">
+					<a href="{{url}}">{{url}}</a>
+				</div>
+				<div class="description">{{description}}</div>
+			</div>
+			<div class="col-xs-4">
+				<div class="code-view">
+					<div>platform: {{getPlatform()}}</div>
+					<div>userAgent: {{getUserAgent()}}</div>
+					<div>appVersion: {{getAppVersion()}}</div>
+					<div>screen: {{getScreenSize()}}</div>
+					<div>window: {{getWindowSize()}}</div>
+				</div>
+			</div>
+		</div>
+
+		<div ng-view></div>
+	</div>
+
+	<style>
+		.code-view {
+			display: block;
+			padding: 1rem;
+			font-size: 1rem;
+			color: #333;
+			background-color: #f5f5f5;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+		}
+	</style>
+
+
+	<script src="cordova.js"></script>
+	<script src="toast.js"></script>
+
+	<script src="bower_components/es5-shim/es5-sham.min.js"></script>
+	<script src="bower_components/es6-shim/es6-sham.min.js"></script>
+	<script src="bower_components/angularjs/angular.min.js"></script>
+	<script src="bower_components/angular-route/angular-route.min.js"></script>
+	<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.min.js"></script>
+	<script src="bower_components/angular-ui-select/dist/select.min.js"></script>
+	<script src="bower_components/angular-ui-notification/dist/angular-ui-notification.min.js"></script>
+
+
+	<script src="bower_components/clappr/dist/clappr.min.js" type="text/javascript"></script>
+	<script src="components/clappr-audio-track-selector-plugin/dist/audio-track-selector.min.js" type="text/javascript"></script>
+	<script src="components/Clappr-Subtitle/subtitles.js" type="text/javascript"></script>
+	<script src="components/clappr-level-selector-plugin/dist/level-selector.min.js" type="text/javascript"></script>
+	<script src="components/clappr-smooth-plugin/dist/smooth.min.js" type="text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/clappr.thumbnails-plugin/latest/clappr-thumbnails-plugin.js" type="text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js" type="text/javascript"></script>
+
+	<script src="assets/js/angularjs/app.js"></script>
+	<script src="clappr/clapprController.js"></script>
+	<script src="clappr/app.js"></script>
+
+	<script src="demo1/demo1.js"></script>
+</body>
+
+</html>

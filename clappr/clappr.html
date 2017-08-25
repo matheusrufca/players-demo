@@ -1,0 +1,84 @@
+<div class="row">
+	<div class="col-xs-9">
+		<!-- <div class="form-group">
+			<input ng-model="streamUrl" class="form-control" type="url" placeholder="Stream URL" />
+		</div> -->
+		<div class="form-group">
+			<ui-select ng-model="sources.selected" theme="select2" style="width: 100%" title="Choose a stream">
+				<ui-select-match placeholder="Select stream">{{sources.selected.id}} {{sources.selected.videoUrl}}</ui-select-match>
+				<ui-select-choices repeat="content in sources.options track by $index">
+					<div ng-bind-html="content.id | highlight: $select.search"></div>
+					<small>
+						{{content.streamUrl}}
+					</small>
+				</ui-select-choices>
+			</ui-select>
+			<p>Selected: <code>{{sources.selected|json}}</code></p>
+		</div>
+
+		<div>
+			<div id="clappr-container" class="clappr-container"></div>
+			<div class="btn-group" role="group">
+				<button ng-repeat="x in subtitles" ng-click="changeSubtitle(x)" type="button" class="btn btn-default">{{x.label}}</button>
+			</div>
+			<pre>{{playerConfigs.current.source}}</pre>
+		</div>
+	</div>
+
+	<div class="col-xs-3">
+		<div class="form-group">
+			<button ng-click="loadPlayer()" ng-disabled="!(sources.selected.streamUrl)" class="btn btn-default">Load player</button>
+			<button ng-click="getCookies()" class="btn btn-default">Get cookies</button>
+		</div>
+		<div class="form-group">
+			<label>
+				<input type="radio" ng-model="vizzto.quality" value="fullhd"  name="vizzto.streamQuality"  /> Full HD
+			</label>
+			<label>
+				<input type="radio" ng-model="vizzto.quality" value="hd" name="vizzto.streamQuality" ng-checked="true"/> HD
+			</label>
+			<label>
+				<input type="radio" ng-model="vizzto.quality" value="sd" name="vizzto.streamQuality" /> SD
+			</label>
+		</div>
+		<div class="form-group">
+			<label>
+				<input type="radio" ng-model="vizzto.format" value="hls"  name="vizzto.streamFormat" ng-checked="true" /> HLS
+			</label>
+			<label>
+				<input type="radio" ng-model="vizzto.format" value="dash" name="vizzto.streamFormat" /> DASH
+			</label>
+			<label>
+				<input type="radio" ng-model="vizzto.format" value="smooth" name="vizzto.streamFormat" /> Smooth
+			</label>
+		</div>
+		<div class="form-group">
+			<label>
+				<input type="checkbox" name="withCredentials" ng-model="playerConfigs.withCredentials"> With credentials
+			</label>
+		</div>
+		<div class="form-group">
+			<textarea ng-model="playerConfigs.options" class="form-control" placeholder="Options" rows="4">
+				{
+					parentId: '#clappr-container',
+					hlsjsConfig: {
+						xhrSetup: function (xhr, url) {
+							xhr.withCredentials = true
+						}
+					},
+					events: {
+						onError: function (e) {
+							//this.show();
+							logService.error("Error on playing video");
+							// Here the code to handle the error
+							//toastr.error(JSON.stringify(e));
+						}
+					}
+				};
+			</textarea>
+		</div>
+		<div class="form-group">
+			<pre>Current options: <br /> {{ playerConfigs.current | json:2 }}</pre>
+		</div>
+	</div>
+</div>

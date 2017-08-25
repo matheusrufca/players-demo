@@ -1,0 +1,38 @@
+[{
+		"id": "cookie-protected",
+		"streamUrl": "http://cdn.vizzto.net/102/trailer/hls/video/fullhd/video.m3u8",
+		"baseUrl": "http://cdn.vizzto.net/102/trailer",
+		"type": "Cookie"
+	}, {
+		"id": "vizzto-hls-multi-audio",
+		"type": "HLS Multi-audio",
+		"streamUrl": "http://cdn.vizzto.net/76/source/hls/video/fullhd/video.m3u8",
+		"baseUrl": "http://cdn.vizzto.net/76/source"
+	}, {
+		"id": "hls-multi-audio",
+		"type": "hls multi-audio",
+		"streamUrl": "http://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
+	}, {
+		"id": "dash.js",
+		"streamUrl": "https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd",
+		"type": "DASH"
+	}, {
+		"id": "hls-demo-1",
+		"streamUrl": "http://player.h-cdn.org/static/hls/long_demo/cdn_demo_long.m3u8",
+		"type": "HLS"
+	}, {
+		"id": "hls-demo-2",
+		"streamUrl": "http://player.h-cdn.org/static/hls/cdn2/master.m3u8",
+		"type": "HLS"
+	},
+	{
+		"id": "dash-demo",
+		"streamUrl": "//storage.googleapis.com/shaka-demo-assets/angel-one/dash.mpd",
+		"type": "DASH"
+	},
+	{
+		"id": "smooth-demo",
+		"streamUrl": "http://playready.directtaps.net/smoothstreaming/TTLSS720VC1/To_The_Limit_720.ism/Manifest",
+		"type": "SMOOTH"
+	}
+]
