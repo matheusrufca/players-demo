@@ -4,6 +4,14 @@
 		"baseUrl": "http://cdn.vizzto.net/102/trailer",
 		"type": "Cookie"
 	}, {
+		"id": "hls-encrypted-demo-1",
+		"streamUrl": "https://s3.amazonaws.com/vspdev-storage-output/117/trailer/hls/video/sd/video.m3u8",
+		"type": "HLS encrypted"
+	},  {
+		"id": "hls-encrypted-demo-2",
+		"streamUrl": "https://s3.amazonaws.com/vspdev-storage-output/117/trailer/hls/video/sd/video/300/video.m3u8",
+		"type": "HLS encrypted"
+	}, {
 		"id": "vizzto-hls-multi-audio",
 		"type": "HLS Multi-audio",
 		"streamUrl": "http://cdn.vizzto.net/76/source/hls/video/fullhd/video.m3u8",
@@ -34,5 +42,31 @@
 		"id": "smooth-demo",
 		"streamUrl": "http://playready.directtaps.net/smoothstreaming/TTLSS720VC1/To_The_Limit_720.ism/Manifest",
 		"type": "SMOOTH"
+	},
+	{
+		"id": "hls-encrypted-demo",
+		"streamUrl": "http://ams-samplescdn.streaming.mediaservices.windows.net/c1275bed-9977-40ca-bb27-91bc783c040b/sintel_trailer-1080p.ism/manifest(format=m3u8-aapl)",
+		"type": "HLS",
+		"aes": {
+			"aestoken": "Bearer%3durn%253amicrosoft%253aazure%253amediaservices%253acontentkeyidentifier%3d8ca714da-5404-4617-9fc2-3ea58d88667f%26Audience%3durn%253atest%26ExpiresOn%3d2281559228%26Issuer%3dhttp%253a%252f%252ftestacs.com%252f%26HMACSHA256%3dpimqYZll8uFqSYYFX6AOxAbHH6epEgsn1Y%252f%252bJnOdCLc%253d"
+		}
+	},
+	{
+		"id": "hls-vizzto-encrypted-demo",
+		"streamUrl": "https://s3.amazonaws.com/vspdev-storage-output/116/trailer/hls/video/fullhd/video.m3u8",
+		"type": "HLS",
+		"aes": {
+			"aestoken": "Bearer%3durn%253amicrosoft%253aazure%253amediaservices%253acontentkeyidentifier%3d8ca714da-5404-4617-9fc2-3ea58d88667f%26Audience%3durn%253atest%26ExpiresOn%3d2281559228%26Issuer%3dhttp%253a%252f%252ftestacs.com%252f%26HMACSHA256%3dpimqYZll8uFqSYYFX6AOxAbHH6epEgsn1Y%252f%252bJnOdCLc%253d"
+		}
+	},
+	{
+		"id": 13,
+		"streamUrl": "http://d2jl6e4h8300i8.cloudfront.net/drm/dash/netflix_meridian/mbr/stream.mpd",
+		"type": "DRM",
+		"title": "DASH DRM",
+		"drm": {
+			"CustomData": "PEtleU9TQXV0aGVudGljYXRpb25YTUw+PERhdGE+PEdlbmVyYXRpb25UaW1lPjIwMTctMDMtMjEgMTM6MDY6MjcuMDYyPC9HZW5lcmF0aW9uVGltZT48RXhwaXJhdGlvblRpbWU+MjAyNy0wMy0xOSAxMzowNjoyNy4wNjI8L0V4cGlyYXRpb25UaW1lPjxVbmlxdWVJZD5kMjZhNDVmMGNjMGM0ODgwYjQzMTA2OGYyYjRlYjgyYTwvVW5pcXVlSWQ+PFJTQVB1YktleUlkPjdlMTE0MDBjN2RjY2QyOWQwMTc0YzY3NDM5N2Q5OWRkPC9SU0FQdWJLZXlJZD48V2lkZXZpbmVQb2xpY3kgZmxfQ2FuUGxheT0idHJ1ZSIgZmxfQ2FuUGVyc2lzdD0iZmFsc2UiIC8+PFdpZGV2aW5lQ29udGVudEtleVNwZWMgVHJhY2tUeXBlPSJIRCI+PFNlY3VyaXR5TGV2ZWw+MTwvU2VjdXJpdHlMZXZlbD48L1dpZGV2aW5lQ29udGVudEtleVNwZWM+PExpY2Vuc2UgdHlwZT0ic2ltcGxlIiAvPjwvRGF0YT48U2lnbmF0dXJlPklnekI3YkIrdFZweCsvZzhuRW9URUo5QUQvOHJNbGN5dHIrTVB1NDdNOUpBSm9ZMzM4d1VQNVV5c3I5S1AvMlJIVVhSTFdoc2tKQUFPSWdPaGlXMmFDWjc0MDlVcTYvZVhiUVRCZnNjOTVHbHdIL3dBaTUvaVBya1A0anMvNStqN20vVytLaXVCc1h6WkNwWG9xWTF2MmY4VTZTRGZUMXJFcGtMci9pT1R1L09tQUptdHE1R2V3RXU4eE4xSjNiSmtUdjVmSVNoNHUxYU8yenpZSlAyK0R5YVdSR3hsRzEyTkJvMmdyeEFpQ1pINnNzUnZDUkxqYUl1TzEzd2tVYWRwK0JvY0tpMUJZQzYvTkxZRXV4eHpVaUFWQ0hncXROOVdmYkRmZjZPeXdZTVd1c1lCU2NiNEFvRSsrV25Sb3A4Kzl5VGZrMlJFNVVxbGRyckVPUVJIQT09PC9TaWduYXR1cmU+PC9LZXlPU0F1dGhlbnRpY2F0aW9uWE1MPg==",
+			"LicenseServer": "https://pr-keyos.licensekeyserver.com/core/rightsmanager.asmx"
+		}
 	}
 ]

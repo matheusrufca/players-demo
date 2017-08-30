@@ -15,7 +15,6 @@
 </head>
 
 <body ng-app="app">
-	<a href="http://towerz.me/clappr-youtube-playback/">http://towerz.me/clappr-youtube-playback/</a>
 	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
@@ -30,11 +29,20 @@
 	<div ng-controller="MainController" class="container-fluid">
 		<div class="row">
 			<div id="content-header" class="content-header col-xs-8">
-				<h2>{{title}}-demo</h2>
+				<h2>{{playerInfo.title}}</h2>
 				<div class="url">
-					<a href="{{url}}">{{url}}</a>
+					<a href="{{url}}">{{playerInfo.url}}</a>
 				</div>
-				<div class="description">{{description}}</div>
+				<div class="url">
+					<a href="{{gitUrl}}">{{playerInfo.gitUrl}}</a>
+				</div>
+				<div class="description">{{playerInfo.description}}</div>
+
+				<ul>
+					<li ng-repeat="item in playerInfo.demos">
+						<a href="{{item}}">{{item}}</a>
+					</li>
+				</ul>
 			</div>
 			<div class="col-xs-4">
 				<div class="code-view">
@@ -85,10 +93,12 @@
 	<script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js" type="text/javascript"></script>
 
 	<script src="assets/js/angularjs/app.js"></script>
-	<script src="clappr/clapprController.js"></script>
-	<script src="clappr/app.js"></script>
-
-	<script src="demo1/demo1.js"></script>
+	<script src="views/clappr/clapprController.js"></script>
+	<script src="views/shaka-player/shakaPlayerController.js"></script>
+	<script src="views/bitmovin/bitmovingController.js"></script>
+	<script src="views/orange/orangeController.js"></script>
+	<script src="views/theo/theoController.js"></script>
+	<script src="views/demo1/demo1.js"></script>
 </body>
 
 </html>

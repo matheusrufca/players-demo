@@ -1,16 +1,32 @@
 angular.module('libraries', ['ngRoute', 'ngResource', 'ngSanitize', 'ui.select', 'ui-notification']);
 
 
-angular.module("app", ['libraries', 'clappr', 'demo1'])
+angular.module("app", ['libraries', 'clappr', 'shaka', 'orange', 'bitmovin', 'demo1'])
 	.config(function ($routeProvider, $locationProvider) {
 		$locationProvider.hashPrefix('');
 		$routeProvider
 			.when('/clappr', {
-				templateUrl: 'clappr/clappr.html',
+				templateUrl: 'views/clappr/clappr.html',
 				controller: 'ClapprController'
 			})
+			.when('/orange', {
+				templateUrl: 'views/orange/orange.html',
+				controller: 'OrangeController'
+			})
+			.when('/bitmovin', {
+				templateUrl: 'views/bitmovin/bitmovin.html',
+				controller: 'BitmovinController'
+			})
+			.when('/shaka-player', {
+				templateUrl: 'views/shaka-player/shaka-player.html',
+				controller: 'ShakaPlayerController'
+			})
+			.when('/theo', {
+				templateUrl: 'views/theo/theo.html',
+				controller: 'TheoController'
+			})
 			.when('/demo1', {
-				templateUrl: 'demo1/demo1.html',
+				templateUrl: 'views/demo1/demo1.html',
 				controller: 'Demo1Controller'
 			})
 			.otherwise({
@@ -27,6 +43,18 @@ angular.module("app", ['libraries', 'clappr', 'demo1'])
 					label: "Clapper",
 					href: "#/clappr"
 				}, {
+					label: "Shaka player",
+					href: "#/shaka-player"
+				}, {
+					label: "Bitmovin",
+					href: "#/bitmovin"
+				}, {
+					label: "Orange player",
+					href: "#/orange"
+				}, {
+					label: "THEO player",
+					href: "#/theo"
+				}, {
 					label: "Demo 1",
 					href: "#/demo1"
 				}];
@@ -41,13 +69,15 @@ angular.module("app", ['libraries', 'clappr', 'demo1'])
 			}
 		};
 	})
-	.controller('MainController', ['$scope', '$window', function ($scope, $window) {
-
-
-		
-		$scope.title = "clappr";
-		$scope.url = "https://github.com/clappr/clappr";
-		$scope.description = "An extensible media player for the web. http://clappr.io";
+	.factory('broadcastService', function ($rootScope) {
+		return {
+			send: function (msg, data) {
+				$rootScope.$broadcast(msg, data);
+			}
+		}
+	})
+	.controller('MainController', ['$rootScope', '$scope', '$window', function ($rootScope, $scope, $window) {
+		$scope.playerInfo = {};
 
 		$scope.getScreenSize = function () {
 			return [$window.screen.width, $window.screen.height].join('x');
@@ -75,4 +105,10 @@ angular.module("app", ['libraries', 'clappr', 'demo1'])
 		$scope.getAppVersion = function () {
 			return $window.navigator.appVersion;
 		};
+
+
+		$scope.$on('app.navigation:changed', function (event, eventData) {
+
+			$scope.playerInfo = angular.extend({}, eventData);
+		});
 	}]);

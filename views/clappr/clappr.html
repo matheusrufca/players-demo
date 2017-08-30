@@ -4,7 +4,7 @@
 			<input ng-model="streamUrl" class="form-control" type="url" placeholder="Stream URL" />
 		</div> -->
 		<div class="form-group">
-			<ui-select ng-model="sources.selected" theme="select2" style="width: 100%" title="Choose a stream">
+			<ui-select ng-model="sources.selected" theme="select2" style="width: 100%" title="Choose a stream" search-enabled="false">
 				<ui-select-match placeholder="Select stream">{{sources.selected.id}} {{sources.selected.videoUrl}}</ui-select-match>
 				<ui-select-choices repeat="content in sources.options track by $index">
 					<div ng-bind-html="content.id | highlight: $select.search"></div>
